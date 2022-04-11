@@ -60,3 +60,18 @@ from sklearn.metrics import confusion_matrix
 
 confusion = confusion_matrix(y_true=expected, y_pred=predicted)
 print(confusion) #allows you the see where it kind of messed up. 
+
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt2
+
+confusion_df = pd.DataFrame(confusion, index=range(10), columns=range(10))
+
+figure = plt2.figure(figsize=(7,6))
+axes = sns.heatmap(confusion_df, annot=True, cmap=plt2.cm.nipy_spectral_r)
+plt2.show()
+
+print("done")
+# each row represents one of the classes
+# each column represents what the program guesses the class as
+# numbers outside of the diagnal represent wrong guesses
