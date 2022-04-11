@@ -9,11 +9,39 @@
 # to see if the expected and predicted species
 # match up
 
+from sklearn.datasets import load_iris
+iris = load_iris()
+
+
 # display the shape of the data, target and target_names
+print(iris.data.shape)
+
+from sklearn.model_selection import train_test_split
+
+data_train, data_test, target_train, target_test = train_test_split(iris.data, iris.target,random_state=11)
+
+print(data_train.shape) #training the data --> 2-D
+print(data_test.shape)
+print(target_train.shape) # just going to 1-D
+print(target_test.shape)
 
 # display the first 10 predicted and expected results using
 # the species names not the number (using target_names)
 
+from sklearn.neighbors import KNeighborsClassifier
+
+knn = KNeighborsClassifier()
+
+knn.fit(X=data_train , y=target_train)  #it all comes down to this one method. this will do all of the machine learning. 
+                                        #It needs the data (what it should look at) and the target (what it should be)
+
+predicted = knn.predict(X=data_test) #only have X because you don't need the target because it will tell you the target
+
+#how do we know if it's correct?
+expected = target_test
+
+print(predicted[:10])
+print(expected[:10])
 # display the values that the model got wrong
 
 # visualize the data using the confusion matrix
