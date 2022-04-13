@@ -34,6 +34,9 @@ print(data_test.shape)
 print(target_train.shape) # just going to 1-D
 print(target_test.shape)
 
+print(type(data_train))
+
+'''
 from sklearn.neighbors import KNeighborsClassifier
 
 knn = KNeighborsClassifier()
@@ -75,3 +78,4 @@ print("done")
 # each row represents one of the classes
 # each column represents what the program guesses the class as
 # numbers outside of the diagnal represent wrong guesses
+'''

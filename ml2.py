@@ -20,6 +20,12 @@ X_train , X_test, y_train, y_test = train_test_split(nyc.Date.values.reshape(-1,
 
 print(X_train.shape)
 print(X_test.shape)
+print(X_train)
+print(X_test)
+print(y_train)
+print(y_test)
+
+'''
 
 from sklearn.linear_model import LinearRegression
 lr = LinearRegression()
@@ -59,3 +65,4 @@ import matplotlib.pyplot as plt
 
 line = plt.plot(x,y) #put in the 4 points
 plt.show()
+'''
