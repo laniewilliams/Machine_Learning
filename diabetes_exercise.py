@@ -35,20 +35,11 @@ print(lr.intercept_)
 
 # create a scatterplot with regression line
 
-'''
-predicted = lr.predict(X_test)
-
-import seaborn as sns
-
-axes = sns.scatterplot(data=db,x=X_test, y=y_test, hue='Temperature',palette='winter',legend=False)
-x = np.array([min(db),max(db)])
 
 predict = lambda x: x*lr.coef_ + lr.intercept_
-'''
 predicted = lr.predict(X_test)
 #plt.scatter(X_test, y_test, color ='b')
 plt.plot(y_test, predicted, '.')
-#plt.plot.set_ylim(0,300)
-#plt.plot.set_xlim(0,300)
+
 
 plt.show()
